@@ -89,3 +89,4 @@ class Cart:
         """
         for product, quantity in self.products.items():
             product.buy(quantity)
+        self.clear()
