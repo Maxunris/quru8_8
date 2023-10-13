@@ -62,6 +62,10 @@ class TestCart:
         cart.add_product(product, 10)
         cart.remove_product(product, 10)
         assert product not in cart.products
+        cart.add_product(product, 10)
+        cart.remove_product(product)
+        assert product not in cart.products
+
 
 
     def test_clear_card(self, cart , product):
