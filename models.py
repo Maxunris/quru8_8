@@ -65,9 +65,9 @@ class Cart:
         Если remove_count не передан, то удаляется вся позиция
         Если remove_count больше, чем количество продуктов в позиции, то удаляется вся позиция
         """
-        if product not in self.products:
-            raise ValueError
-        elif remove_count in None or remove_count >= self.products[product]:
+        if not remove_count:
+            del self.products[product]
+        elif remove_count >= self.products[product]:
             del self.products[product]
         else:
             self.products[product] -= remove_count
